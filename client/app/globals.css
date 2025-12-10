@@ -1,0 +1,69 @@
+@import "tailwindcss";
+@plugin "tailwindcss-animate";
+
+@theme {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+}
+
+:root {
+  --background: #F9FAFB;
+  --foreground: #212B36;
+  --card: #FFFFFF;
+  --card-foreground: #212B36;
+  --border: #F1F3F5;
+  --input: #F4F6F8;
+  --primary: #000000;
+  --primary-foreground: #FFFFFF;
+  --secondary: #F4F6F8;
+  --secondary-foreground: #637381;
+  --muted: #F4F6F8;
+  --muted-foreground: #919EAB;
+  --accent: #F4F6F8;
+  --accent-foreground: #212B36;
+}
+
+.dark {
+  --background: #161C24;
+  --foreground: #FFFFFF;
+  --card: #212B36;
+  --card-foreground: #FFFFFF;
+  --border: #333d4d;
+  --input: #29313d;
+  --primary: #FFFFFF;
+  --primary-foreground: #212B36;
+  --secondary: #29313d;
+  --secondary-foreground: #919EAB;
+  --muted: #29313d;
+  --muted-foreground: #637381;
+  --accent: #29313d;
+  --accent-foreground: #FFFFFF;
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Hide Scrollbar for horizontal scroll */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
