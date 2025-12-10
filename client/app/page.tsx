@@ -31,7 +31,7 @@ export default function Home() {
     setError('');
   };
 
-  const handlePhoneSubmit = async (e) => {
+  const handlePhoneSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
     setError('');
@@ -51,7 +51,7 @@ export default function Home() {
     }
   };
 
-  const handleRegister = async (e) => {
+  const handleRegister = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
     setError('');
