@@ -14,7 +14,19 @@ const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/chatbo
 // --- Security Middleware ---
 app.use(helmet()); // Adds security headers (XSS protection, etc.)
 app.use(cors({
-    origin: process.env.CORS_ORIGIN || 'http://localhost:3000',
+    origin: function (origin, callback) {
+        const allowedOrigins = [
+            'http://localhost:3000',
+            'https://chatbot-ivory-xi.vercel.app',
+            process.env.CORS_ORIGIN
+        ].filter(Boolean);
+
+        if (!origin || allowedOrigins.includes(origin)) {
+            callback(null, true);
+        } else {
+            callback(new Error('Not allowed by CORS'));
+        }
+    },
     credentials: true
 }));
 
